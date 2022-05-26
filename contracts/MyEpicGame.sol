@@ -2869,12 +2869,12 @@ contract MyEpicGame is ERC721 {
             maxHp: bossHp,
             attackDamage: bossAttackDamage
         });
-        console.log(
-            "Done initializing boss %s w/ HP %s, img %s",
-            bigBoss.name,
-            bigBoss.hp,
-            bigBoss.imageURI
-        );
+        // console.log(
+        //     "Done initializing boss %s w/ HP %s, img %s",
+        //     bigBoss.name,
+        //     bigBoss.hp,
+        //     bigBoss.imageURI
+        // );
 
         //> Recorremos todos los caracteres y guardamos sus valores en nuestro contrato para que
         // podemos usarlos más tarde cuando acuñamos nuestros NFT.
@@ -2891,13 +2891,13 @@ contract MyEpicGame is ERC721 {
                 })
             );
 
-            CharacterAttributes memory c = defaultCharacters[i];
-            console.log(
-                "Done initializing %s w/ HP %s, img %s",
-                c.name,
-                c.hp,
-                c.imageURI
-            );
+            // CharacterAttributes memory c = defaultCharacters[i];
+            // console.log(
+            //     "Done initializing %s w/ HP %s, img %s",
+            //     c.name,
+            //     c.hp,
+            //     c.imageURI
+            // );
         }
     }
 
@@ -2964,11 +2964,11 @@ contract MyEpicGame is ERC721 {
         });
         //> Mantenemos una manera fácil de ver quién posee qué NFT.
         nftHolders[msg.sender] = newItemId;
-        console.log(
-            "Minted NFT w/ tokenId %s and characterId %s",
-            newItemId,
-            _characterIndex
-        );
+        // console.log(
+        //     "Minted NFT w/ tokenId %s and characterId %s",
+        //     newItemId,
+        //     _characterIndex
+        // );
         //> Volvemos a incrementar el _tokenId para el proximo usuario.
         _tokenIds.increment();
         emit CharacterNFTMinted(msg.sender, newItemId, _characterIndex);
@@ -2983,19 +2983,19 @@ contract MyEpicGame is ERC721 {
         CharacterAttributes storage player = nftHolderAttributes[
             nftTokenIdOfPlayer
         ];
-        console.log("\nPlayer w/ character %s about to attack", player.name);
-        console.log(
-            "Player has %s HP, %s AD and %s Sh\n",
-            player.hp,
-            player.attackDamage,
-            player.shield
-        );
-        console.log(
-            "Boss %s has %s HP and %s AD",
-            bigBoss.name,
-            bigBoss.hp,
-            bigBoss.attackDamage
-        );
+        // console.log("\nPlayer w/ character %s about to attack", player.name);
+        // console.log(
+        //     "Player has %s HP, %s AD and %s Sh\n",
+        //     player.hp,
+        //     player.attackDamage,
+        //     player.shield
+        // );
+        // console.log(
+        //     "Boss %s has %s HP and %s AD",
+        //     bigBoss.name,
+        //     bigBoss.hp,
+        //     bigBoss.attackDamage
+        // );
         //> Validamos que el jugador no tenga un NFT con 0 HP.
         require(player.hp > 0, "Error: character must have HP to attack boss.");
         //> Validamos que el Jefe tenga mas de 0 HP.
@@ -3009,7 +3009,7 @@ contract MyEpicGame is ERC721 {
         } else {
             bigBoss.hp = bigBoss.hp - player.attackDamage;
         }
-        console.log("Player attacked boss. New boss hp: %s", bigBoss.hp);
+        // console.log("Player attacked boss. New boss hp: %s", bigBoss.hp);
         emit AttackBossComplete(bigBoss.hp, player.hp);
     }
 
@@ -3018,19 +3018,19 @@ contract MyEpicGame is ERC721 {
         CharacterAttributes storage player = nftHolderAttributes[
             nftTokenIdOfPlayer
         ];
-        console.log("\nPlayer w/ character %s about to attack", player.name);
-        console.log(
-            "Player has %s HP, %s AD and %s Sh\n",
-            player.hp,
-            player.attackDamage,
-            player.shield
-        );
-        console.log(
-            "Boss %s has %s HP and %s AD",
-            bigBoss.name,
-            bigBoss.hp,
-            bigBoss.attackDamage
-        );
+        // console.log("\nPlayer w/ character %s about to attack", player.name);
+        // console.log(
+        //     "Player has %s HP, %s AD and %s Sh\n",
+        //     player.hp,
+        //     player.attackDamage,
+        //     player.shield
+        // );
+        // console.log(
+        //     "Boss %s has %s HP and %s AD",
+        //     bigBoss.name,
+        //     bigBoss.hp,
+        //     bigBoss.attackDamage
+        // );
         //> Validamos que el jugador no tenga un NFT con 0 HP.
         require(player.hp > 0, "Error: character must have HP to attack boss.");
         //> Validamos que el Jefe tenga mas de 0 HP.
@@ -3042,7 +3042,7 @@ contract MyEpicGame is ERC721 {
         } else {
             player.hp = (player.hp + player.shield) - bigBoss.attackDamage;
         }
-        console.log("Boss attacked player. New player hp: %s\n", player.hp);
+        // console.log("Boss attacked player. New player hp: %s\n", player.hp);
         emit AttackCharacterComplete(bigBoss.hp, player.hp);
     }
 

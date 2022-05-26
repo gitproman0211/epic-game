@@ -1,5 +1,7 @@
 # Epic Game [SmartContract]
 
+contract address 0xb17F38bc2E46192AE8A04f24a42E7a7499fA3fbe
+
 ---
 
 # Basic Sample Hardhat Project

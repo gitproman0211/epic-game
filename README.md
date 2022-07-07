@@ -4,7 +4,7 @@ contract address 0xb17F38bc2E46192AE8A04f24a42E7a7499fA3fbe
 
 ---
 
-# Basic Sample Hardhat Project
+# Basic Sample Hardhat Project 
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
 
